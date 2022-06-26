@@ -4,10 +4,10 @@ namespace Model
 {
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private ScoreData _scoreData;
-        [SerializeField] private PauseData _pauseData;
-        public ScoreData ScoreData => _scoreData;
-        public PauseData PauseData => _pauseData;
+        [SerializeField] private ScoreData scoreData;
+        [SerializeField] private PauseData pauseData;
+        public ScoreData ScoreData => scoreData;
+        public PauseData PauseData => pauseData;
 
         private void Awake()
         {
@@ -16,7 +16,7 @@ namespace Model
             else
                 DontDestroyOnLoad(this);
         }
-        
+
         private bool IsSessionExit()
         {
             var sessions = FindObjectsOfType<GameSession>();
@@ -26,6 +26,12 @@ namespace Model
                     return true;
 
             return false;
+        }
+        
+        public void SetDefoultValues()
+        {
+            scoreData.SetDefoultValues();
+            pauseData.SetDefoultValues();
         }
     }
 }

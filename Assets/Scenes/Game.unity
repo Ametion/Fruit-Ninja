@@ -314,9 +314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acd961d9486148bb9f4b0fc7905fb18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreData:
-    _scoreText: {fileID: 206058010}
-  _pauseData:
+  scoreData:
+    scoreText: {fileID: 206058010}
+  pauseData:
     IsPause: 0
 --- !u!4 &827196705
 Transform:
@@ -365,7 +365,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2004798706}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -399,6 +399,8 @@ MonoBehaviour:
   prefab: {fileID: 4759109306464306055, guid: 31cd68578538b144b950ee0442f0633d, type: 3}
   position: {fileID: 0}
   parent: {fileID: 2004798706}
+  foodSpawner: 0
+  spawnTime: 0
 --- !u!114 &896698321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,11 +533,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1497888342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de28847b68b849febb220a6e00e50d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d611e56539545eb9358047c59e74758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 285424406208125303, guid: 78d0cfe83d4401745ad584e6d509df9d, type: 3}
-  _spawnTime: 7
+  prefab: {fileID: 285424406208125303, guid: 78d0cfe83d4401745ad584e6d509df9d, type: 3}
+  position: {fileID: 0}
+  parent: {fileID: 0}
+  foodSpawner: 1
+  spawnTime: 7.5
 --- !u!4 &1497888344
 Transform:
   m_ObjectHideFlags: 0
@@ -576,11 +581,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608404246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de28847b68b849febb220a6e00e50d8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d611e56539545eb9358047c59e74758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 285424406208125303, guid: 214afcfcee080f7488d7a0c97ff31a61, type: 3}
-  _spawnTime: 3
+  prefab: {fileID: 285424406208125303, guid: 214afcfcee080f7488d7a0c97ff31a61, type: 3}
+  position: {fileID: 0}
+  parent: {fileID: 0}
+  foodSpawner: 1
+  spawnTime: 3
 --- !u!4 &1608404248
 Transform:
   m_ObjectHideFlags: 0
@@ -658,8 +666,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 206058012}
-  - {fileID: 2050141333}
   - {fileID: 896698318}
+  - {fileID: 2050141333}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -727,7 +735,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &2050141332
 GameObject:
@@ -759,7 +767,7 @@ Transform:
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_Children: []
   m_Father: {fileID: 2004798706}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2050141334
 MonoBehaviour:

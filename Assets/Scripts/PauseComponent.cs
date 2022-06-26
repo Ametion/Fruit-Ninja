@@ -1,14 +1,13 @@
-﻿using System;
-using Model;
+﻿using Model;
 using UnityEngine;
 
 public class PauseComponent : MonoBehaviour
 {
-    private GameSession gameSession;
+    private GameSession _gameSession;
 
-    private void Awake() => gameSession = FindObjectOfType<GameSession>();
+    private void Awake() => _gameSession = FindObjectOfType<GameSession>();
 
-    public void Pause() => gameSession.PauseData.IsPause = true;
+    public void Pause() => _gameSession.PauseData.IsPause = true;
     
-    public void Resume() => gameSession.PauseData.IsPause = false;
+    public void Resume() => _gameSession.PauseData.IsPause = false;
 }

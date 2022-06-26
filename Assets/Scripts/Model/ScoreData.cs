@@ -6,14 +6,17 @@ namespace Model
     [System.Serializable]
     public class ScoreData
     {
-        [SerializeField] private Text _scoreText;
-
-        private int score;
+        [SerializeField] private Text scoreText;
+        private int _score;
 
         public void ModifyScore(int modifiedScore)
         {
-            score += modifiedScore;
-            _scoreText.text = score.ToString();
+            scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+            
+            _score += modifiedScore;
+            scoreText.text = _score.ToString();
         }
+
+        public void SetDefoultValues() => _score = 0;
     }
 }

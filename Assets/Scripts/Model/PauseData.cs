@@ -4,5 +4,7 @@
     public class PauseData
     {
         public bool IsPause;
+
+        public void SetDefoultValues() => IsPause = false;
     }
 }
