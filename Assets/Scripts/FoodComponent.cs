@@ -13,6 +13,8 @@ public class FoodComponent : MonoBehaviour
         _gameSession = FindObjectOfType<GameSession>();
         
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        
+        Destroy(gameObject, 10);
     }
 
     private void Update()

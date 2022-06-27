@@ -13,12 +13,12 @@ public class SpawnComponent : MonoBehaviour
     private void Awake()
     {
         if (foodSpawner)
-            StartCoroutine(FoodSpawn());
+            StartCoroutine(FoodSpawner());
     }
     
     public void SpawnInParent() => Instantiate(prefab, parent);
 
-    private IEnumerator FoodSpawn()
+    private IEnumerator FoodSpawner()
     {
         while (true)
         {

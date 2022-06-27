@@ -9,26 +9,9 @@ namespace Model
         public ScoreData ScoreData => scoreData;
         public PauseData PauseData => pauseData;
 
-        private void Awake()
-        {
-            if (IsSessionExit())
-                DestroyImmediate(gameObject);
-            else
-                DontDestroyOnLoad(this);
-        }
+        private void Awake() => SetDefoultValues();
 
-        private bool IsSessionExit()
-        {
-            var sessions = FindObjectsOfType<GameSession>();
-            
-            foreach (var gameSession in sessions)
-                if (gameSession != this)
-                    return true;
-
-            return false;
-        }
-        
-        public void SetDefoultValues()
+        private void SetDefoultValues()
         {
             scoreData.SetDefoultValues();
             pauseData.SetDefoultValues();
